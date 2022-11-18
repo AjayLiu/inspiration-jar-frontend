@@ -1,0 +1,31 @@
+.filterBar {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 200px;
+  margin: auto;
+
+  .sortBar {
+    margin-bottom: 10px;
+    .sortLabel {
+      margin-right: 5px;
+    }
+  }
+
+  .searchBar {
+    margin: auto;
+    display: flex;
+    height: 20px;
+    align-items: center;
+    .searchImg {
+      background-color: white;
+      height: 100%;
+    }
+  }
+}
+
+.quoteCardList {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+}
