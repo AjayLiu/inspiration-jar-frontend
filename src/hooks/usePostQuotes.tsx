@@ -1,5 +1,6 @@
 import { Status } from "@hooks/quoteTypes";
 import { useEffect, useState } from "react";
+import { backendURL } from "shared";
 
 const usePostQuotes = (
   path: string,
@@ -14,7 +15,7 @@ const usePostQuotes = (
   useEffect(() => {
     if (execute) {
       const postQuotes = async () => {
-        const response = await fetch(`/api/quotes${path}`, {
+        const response = await fetch(backendURL + `/api/quotes${path}`, {
           method: method ?? "POST",
           body: JSON.stringify(body),
           headers: { "Content-Type": "application/json" },

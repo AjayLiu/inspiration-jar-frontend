@@ -5,13 +5,14 @@ import YourQuotes from "@components/YourQuotes/YourQuotes";
 import styles from "@styles/Account.module.scss";
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import { backendURL } from "shared";
 
 const Account: React.FC = () => {
   const [email, setEmail] = useState("loading...");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   useEffect(() => {
     const getEmail = async () => {
-      const response = await fetch("/api/login");
+      const response = await fetch(backendURL + "/api/login");
       const data = await response.json();
       if (response.status != 200) {
         window.location.href = "/login";
@@ -46,7 +47,10 @@ const Account: React.FC = () => {
             <div className={styles.loggedInText}>
               Currently logged in as {email}
             </div>
-            <a className={styles.logoutContainer} href="/api/login/logout">
+            <a
+              className={styles.logoutContainer}
+              href={backendURL + "/api/login/logout"}
+            >
               <img className={styles.logoutImg} src="img/logout.svg"></img>
               <div className={styles.logoutText}>Logout</div>
             </a>
