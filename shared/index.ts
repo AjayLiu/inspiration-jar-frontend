@@ -1,1 +1,1 @@
-export const backendURL = "https://inspiration-jar-backend.onrender.com";
+export const backendURL = "https://inspiration-jar-backend.ajayliu.com";

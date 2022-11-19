@@ -14,6 +14,7 @@ const Account: React.FC = () => {
     const getEmail = async () => {
       const response = await fetch(backendURL + "/api/login");
       const data = await response.json();
+      console.log(response);
       if (response.status != 200) {
         window.location.href = "/login";
       } else {
