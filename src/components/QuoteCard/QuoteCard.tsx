@@ -4,6 +4,7 @@ import usePostQuotes from "@hooks/usePostQuotes";
 import usePostVote from "@hooks/usePostVotes";
 import { useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
+import { backendURL } from "shared";
 import Swal from "sweetalert2";
 import styles from "./QuoteCard.module.scss";
 interface Props {
@@ -31,7 +32,7 @@ const QuoteCard: React.FC<Props> = (props) => {
   useEffect(() => {
     const fetchVoteCount = async () => {
       const response = await fetch(
-        "/api/quotes/vote/for/" + quoteState.quoteID
+        backendURL + "/api/quotes/vote/for/" + quoteState.quoteID
       );
       const data = await response.json();
       setVoteCount(data.count);
